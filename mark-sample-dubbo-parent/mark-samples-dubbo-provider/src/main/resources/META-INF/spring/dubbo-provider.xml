@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    
+    <!-- 提供方应用信息，用于计算依赖关系 -->
+	<dubbo:application name="${dubbo.application.name}" />
+
+	<dubbo:registry address="${dubbo.registry.address}" />
+
+	<dubbo:protocol name="dubbo" port="${dubbo.protocol.dubbo.port}" charset="utf-8"/>
+	
+	<dubbo:consumer timeout="${dubbo.consumer.timeout}" ></dubbo:consumer>
+
+    <!--应用服务 -->
+	<dubbo:service interface="com.mark.samples.dubbo.api.service.IBookService" ref="bookService" protocol="dubbo"/>
+	
+</beans>

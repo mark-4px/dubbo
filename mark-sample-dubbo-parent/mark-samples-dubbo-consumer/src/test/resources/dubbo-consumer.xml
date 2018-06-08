@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ~ Copyright (c) 2016, FPX and/or its affiliates. All rights reserved. 
+	~ Use, Copy is subject to authorized license. -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	    http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<dubbo:application name="mark-samples-dubbo-consumer" />
+
+	<dubbo:registry address="${dubbo.registry.address}"/>
+
+	<!--应用服务 -->
+	<dubbo:reference id="bookService" interface="com.mark.samples.dubbo.api.service.IBookService" />
+	
+</beans>
